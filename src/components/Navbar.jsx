@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react'
 import { Link, useLocation } from 'react-router-dom'
-import { Menu, X } from 'lucide-react'
+import { Menu, X, HardHat } from 'lucide-react'
 
 const links = [
   { to: '/', label: 'Home' },
@@ -16,7 +16,7 @@ export default function Navbar() {
   const { pathname } = useLocation()
 
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 40)
+    const onScroll = () => setScrolled(window.scrollY > 50)
     window.addEventListener('scroll', onScroll)
     return () => window.removeEventListener('scroll', onScroll)
   }, [])
@@ -26,41 +26,39 @@ export default function Navbar() {
   return (
     <nav style={{
       position: 'fixed', top: 0, left: 0, right: 0, zIndex: 1000,
-      padding: scrolled ? '14px 0' : '22px 0',
-      background: scrolled ? 'rgba(44,44,46,0.97)' : 'transparent',
+      padding: scrolled ? '12px 0' : '20px 0',
+      background: scrolled ? 'rgba(255,255,255,0.97)' : 'transparent',
       backdropFilter: scrolled ? 'blur(20px)' : 'none',
       borderBottom: scrolled ? '1px solid var(--border)' : '1px solid transparent',
+      boxShadow: scrolled ? 'var(--shadow-sm)' : 'none',
       transition: 'var(--transition)',
     }}>
       <div style={{ maxWidth: 'var(--max-w)', margin: '0 auto', padding: '0 40px', display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
-        
+
         {/* Logo */}
         <Link to="/" style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
-          <svg width="36" height="36" viewBox="0 0 36 36" fill="none">
-            <polygon points="18,3 33,31 3,31" fill="none" stroke="var(--gold)" strokeWidth="1.8"/>
-            <line x1="18" y1="3" x2="18" y2="31" stroke="var(--gold)" strokeWidth="1" opacity="0.5"/>
-            <line x1="10.5" y1="21" x2="25.5" y2="21" stroke="var(--gold)" strokeWidth="1" opacity="0.5"/>
-            <circle cx="18" cy="3" r="2" fill="var(--gold)" opacity="0.8"/>
-          </svg>
+          <div style={{ width: 40, height: 40, background: 'var(--primary)', borderRadius: 8, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+            <HardHat size={22} color="var(--accent)" />
+          </div>
           <div>
-            <div style={{ fontFamily: 'var(--font-serif)', fontSize: 15, fontWeight: 600, letterSpacing: '0.03em', color: 'var(--text-primary)', lineHeight: 1 }}>Prestige Contractors</div>
-            <div style={{ fontSize: 9, letterSpacing: '0.25em', color: 'var(--gold)', textTransform: 'uppercase', lineHeight: 1, marginTop: 3 }}>Pvt Ltd</div>
+            <div style={{ fontFamily: 'var(--font-serif)', fontSize: 18, fontWeight: 700, color: scrolled ? 'var(--primary)' : 'var(--white)', lineHeight: 1, letterSpacing: '0.02em' }}>Prestige Contractors</div>
+            <div style={{ fontSize: 10, letterSpacing: '0.2em', color: 'var(--accent)', textTransform: 'uppercase', lineHeight: 1, marginTop: 3 }}>Pvt Ltd</div>
           </div>
         </Link>
 
         {/* Desktop links */}
-        <ul style={{ display: 'flex', gap: 40, listStyle: 'none', alignItems: 'center' }} className="desk-nav">
+        <ul style={{ display: 'flex', gap: 36, listStyle: 'none', alignItems: 'center' }} className="desk-nav">
           {links.map(l => (
             <li key={l.to}>
               <Link to={l.to} style={{
-                fontSize: 13, letterSpacing: '0.12em', textTransform: 'uppercase',
-                color: pathname === l.to ? 'var(--gold)' : 'var(--text-secondary)',
-                fontWeight: 500, transition: 'var(--transition)',
+                fontSize: 14, fontWeight: 500,
+                color: pathname === l.to ? 'var(--accent)' : scrolled ? 'var(--text-mid)' : 'rgba(255,255,255,0.9)',
+                transition: 'var(--transition)',
                 paddingBottom: 2,
-                borderBottom: pathname === l.to ? '1px solid var(--gold)' : '1px solid transparent',
+                borderBottom: pathname === l.to ? '2px solid var(--accent)' : '2px solid transparent',
               }}
-              onMouseEnter={e => e.target.style.color = 'var(--gold)'}
-              onMouseLeave={e => { if (pathname !== l.to) e.target.style.color = 'var(--text-secondary)' }}
+              onMouseEnter={e => e.target.style.color = 'var(--accent)'}
+              onMouseLeave={e => { if (pathname !== l.to) e.target.style.color = scrolled ? 'var(--text-mid)' : 'rgba(255,255,255,0.9)' }}
               >{l.label}</Link>
             </li>
           ))}
@@ -68,17 +66,17 @@ export default function Navbar() {
 
         {/* CTA */}
         <Link to="/contact" className="desk-nav" style={{
-          padding: '10px 24px', border: '1px solid var(--gold)',
-          color: 'var(--gold)', fontSize: 12, letterSpacing: '0.15em',
-          textTransform: 'uppercase', fontWeight: 500, borderRadius: 2,
-          transition: 'var(--transition)',
+          padding: '11px 26px', background: 'var(--accent)',
+          color: 'var(--white)', fontSize: 13, fontWeight: 600,
+          borderRadius: 'var(--radius)', transition: 'var(--transition)',
+          boxShadow: '0 2px 8px rgba(200,150,60,0.3)',
         }}
-        onMouseEnter={e => { e.currentTarget.style.background = 'var(--gold)'; e.currentTarget.style.color = 'var(--darkest)' }}
-        onMouseLeave={e => { e.currentTarget.style.background = 'transparent'; e.currentTarget.style.color = 'var(--gold)' }}
+        onMouseEnter={e => { e.currentTarget.style.background = 'var(--accent-dark)'; e.currentTarget.style.transform = 'translateY(-1px)' }}
+        onMouseLeave={e => { e.currentTarget.style.background = 'var(--accent)'; e.currentTarget.style.transform = 'translateY(0)' }}
         >Book Consultation</Link>
 
         {/* Hamburger */}
-        <button onClick={() => setOpen(!open)} style={{ color: 'var(--gold)', display: 'none' }} className="mob-nav">
+        <button onClick={() => setOpen(!open)} style={{ color: scrolled ? 'var(--primary)' : 'var(--white)', display: 'none' }} className="mob-nav">
           {open ? <X size={24} /> : <Menu size={24} />}
         </button>
       </div>
@@ -87,21 +85,21 @@ export default function Navbar() {
       {open && (
         <div style={{
           position: 'absolute', top: '100%', left: 0, right: 0,
-          background: 'rgba(44,44,46,0.98)', backdropFilter: 'blur(20px)',
-          borderBottom: '1px solid var(--border)', padding: '24px 40px',
+          background: 'var(--white)', borderBottom: '1px solid var(--border)',
+          padding: '20px 40px 28px', boxShadow: 'var(--shadow)',
         }}>
           {links.map(l => (
             <Link key={l.to} to={l.to} style={{
-              display: 'block', padding: '14px 0',
-              fontSize: 15, letterSpacing: '0.1em', textTransform: 'uppercase',
-              color: pathname === l.to ? 'var(--gold)' : 'var(--text-secondary)',
+              display: 'block', padding: '13px 0',
+              fontSize: 15, fontWeight: 500,
+              color: pathname === l.to ? 'var(--accent)' : 'var(--text-mid)',
               borderBottom: '1px solid var(--border)',
             }}>{l.label}</Link>
           ))}
           <Link to="/contact" style={{
             display: 'inline-block', marginTop: 20, padding: '12px 28px',
-            border: '1px solid var(--gold)', color: 'var(--gold)',
-            fontSize: 12, letterSpacing: '0.15em', textTransform: 'uppercase',
+            background: 'var(--accent)', color: 'var(--white)',
+            fontSize: 13, fontWeight: 600, borderRadius: 'var(--radius)',
           }}>Book Consultation</Link>
         </div>
       )}
