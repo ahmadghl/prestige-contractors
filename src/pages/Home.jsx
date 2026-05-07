@@ -59,7 +59,7 @@ export default function Home() {
       <section style={{
         minHeight: '100vh', display: 'flex', alignItems: 'center',
         position: 'relative', overflow: 'hidden',
-        background: 'linear-gradient(135deg, #0D0D0D 0%, #141414 50%, #0a0a0a 100%)',
+        background: 'linear-gradient(135deg, var(--darkest) 0%, var(--dark) 50%, var(--darker) 100%)',
       }}>
         {/* Geometric background */}
         <div style={{ position: 'absolute', inset: 0, overflow: 'hidden', pointerEvents: 'none' }}>
@@ -101,7 +101,7 @@ export default function Home() {
             <div style={{ display: 'flex', gap: 16, flexWrap: 'wrap' }}>
               <Link to="/contact" style={{
                 padding: '15px 36px', background: 'var(--gold)',
-                color: 'var(--dark)', fontSize: 13, letterSpacing: '0.12em',
+                color: 'var(--darkest)', fontSize: 13, letterSpacing: '0.12em',
                 textTransform: 'uppercase', fontWeight: 600, borderRadius: 2,
                 display: 'inline-flex', alignItems: 'center', gap: 8, transition: 'var(--transition)',
               }}
@@ -197,7 +197,7 @@ export default function Home() {
           {/* Left visual */}
           <div style={{ position: 'relative' }}>
             <div style={{
-              background: 'linear-gradient(135deg, #1a1a1a, #111)',
+              background: 'linear-gradient(135deg, var(--surface), var(--darker))',
               border: '1px solid var(--border)', padding: '60px',
               position: 'relative', overflow: 'hidden',
             }}>
@@ -220,8 +220,8 @@ export default function Home() {
               </svg>
             </div>
             <div style={{ position: 'absolute', bottom: -20, right: -20, padding: '24px 28px', background: 'var(--gold)', borderRadius: 2 }}>
-              <div style={{ fontFamily: 'var(--font-serif)', fontSize: 36, fontWeight: 700, color: 'var(--dark)', lineHeight: 1 }}>A+</div>
-              <div style={{ fontSize: 11, color: 'rgba(13,13,13,0.7)', letterSpacing: '0.1em', marginTop: 4, textTransform: 'uppercase' }}>Quality Rating</div>
+              <div style={{ fontFamily: 'var(--font-serif)', fontSize: 36, fontWeight: 700, color: 'var(--darkest)', lineHeight: 1 }}>A+</div>
+              <div style={{ fontSize: 11, color: 'rgba(30,30,32,0.7)', letterSpacing: '0.1em', marginTop: 4, textTransform: 'uppercase' }}>Quality Rating</div>
             </div>
           </div>
 
@@ -248,7 +248,7 @@ export default function Home() {
               color: 'var(--gold)', fontSize: 12, letterSpacing: '0.15em',
               textTransform: 'uppercase', fontWeight: 500, borderRadius: 2, transition: 'var(--transition)',
             }}
-            onMouseEnter={e => { e.currentTarget.style.background = 'var(--gold)'; e.currentTarget.style.color = 'var(--dark)' }}
+            onMouseEnter={e => { e.currentTarget.style.background = 'var(--gold)'; e.currentTarget.style.color = 'var(--darkest)' }}
             onMouseLeave={e => { e.currentTarget.style.background = 'transparent'; e.currentTarget.style.color = 'var(--gold)' }}
             >Learn About Us <ArrowRight size={14} /></Link>
           </div>
@@ -273,7 +273,7 @@ export default function Home() {
             <div style={{ display: 'flex', gap: 16, justifyContent: 'center', flexWrap: 'wrap' }}>
               <Link to="/contact" style={{
                 padding: '15px 40px', background: 'var(--gold)',
-                color: 'var(--dark)', fontSize: 13, letterSpacing: '0.12em',
+                color: 'var(--darkest)', fontSize: 13, letterSpacing: '0.12em',
                 textTransform: 'uppercase', fontWeight: 600, borderRadius: 2, transition: 'var(--transition)',
               }}
               onMouseEnter={e => e.currentTarget.style.background = 'var(--gold-light)'}
@@ -293,7 +293,7 @@ export default function Home() {
       </section>
 
       {/* CTA BANNER */}
-      <section style={{ padding: '100px 0', background: 'linear-gradient(135deg, #1a1510, #0D0D0D)' }} ref={ctaRef}>
+      <section style={{ padding: '100px 0', background: 'linear-gradient(135deg, var(--surface), var(--darker))' }} ref={ctaRef}>
         <div style={{ maxWidth: 'var(--max-w)', margin: '0 auto', padding: '0 40px', textAlign: 'center', opacity: ctaVis ? 1 : 0, transform: ctaVis ? 'translateY(0)' : 'translateY(20px)', transition: 'all 0.6s ease' }}>
           <p style={{ fontSize: 11, letterSpacing: '0.25em', color: 'var(--gold)', textTransform: 'uppercase', marginBottom: 16 }}>Ready to Build?</p>
           <h2 style={{ fontFamily: 'var(--font-serif)', fontSize: 'clamp(36px, 5vw, 68px)', fontWeight: 600, lineHeight: 1.1, marginBottom: 28 }}>
@@ -305,7 +305,7 @@ export default function Home() {
           </p>
           <Link to="/contact" style={{
             padding: '17px 48px', background: 'var(--gold)',
-            color: 'var(--dark)', fontSize: 14, letterSpacing: '0.12em',
+            color: 'var(--darkest)', fontSize: 14, letterSpacing: '0.12em',
             textTransform: 'uppercase', fontWeight: 700, borderRadius: 2,
             display: 'inline-flex', alignItems: 'center', gap: 10, transition: 'var(--transition)',
           }}

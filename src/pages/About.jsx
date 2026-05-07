@@ -43,7 +43,7 @@ export default function About() {
   return (
     <div>
       {/* HERO */}
-      <section ref={heroRef} style={{ padding: '180px 0 100px', background: 'linear-gradient(180deg, #111 0%, var(--dark) 100%)', position: 'relative', overflow: 'hidden' }}>
+      <section ref={heroRef} style={{ padding: '180px 0 100px', background: 'linear-gradient(180deg, var(--darker) 0%, var(--dark) 100%)', position: 'relative', overflow: 'hidden' }}>
         <div style={{ position: 'absolute', inset: 0, pointerEvents: 'none' }}>
           <svg width="100%" height="100%" style={{ opacity: 0.03 }}>
             <defs><pattern id="grid4" width="60" height="60" patternUnits="userSpaceOnUse"><path d="M 60 0 L 0 0 0 60" fill="none" stroke="#C8A96E" strokeWidth="0.5"/></pattern></defs>
@@ -85,8 +85,8 @@ export default function About() {
               </svg>
             </div>
             <div style={{ position: 'absolute', bottom: -20, left: -20, padding: '20px 24px', background: 'var(--gold)', borderRadius: 2 }}>
-              <div style={{ fontFamily: 'var(--font-serif)', fontSize: 32, fontWeight: 700, color: 'var(--dark)', lineHeight: 1 }}>15+</div>
-              <div style={{ fontSize: 11, color: 'rgba(13,13,13,0.7)', letterSpacing: '0.1em', marginTop: 4, textTransform: 'uppercase' }}>Years of Excellence</div>
+              <div style={{ fontFamily: 'var(--font-serif)', fontSize: 32, fontWeight: 700, color: 'var(--darkest)', lineHeight: 1 }}>15+</div>
+              <div style={{ fontSize: 11, color: 'rgba(30,30,32,0.7)', letterSpacing: '0.1em', marginTop: 4, textTransform: 'uppercase' }}>Years of Excellence</div>
             </div>
           </div>
         </div>
@@ -184,7 +184,7 @@ export default function About() {
             Join hundreds of clients who trust Prestige Contractors to guide their construction projects from vision to reality.
           </p>
           <Link to="/contact" style={{
-            padding: '15px 40px', background: 'var(--gold)', color: 'var(--dark)',
+            padding: '15px 40px', background: 'var(--gold)', color: 'var(--darkest)',
             fontSize: 13, letterSpacing: '0.12em', textTransform: 'uppercase',
             fontWeight: 700, borderRadius: 2, display: 'inline-flex', alignItems: 'center', gap: 10, transition: 'var(--transition)',
           }}

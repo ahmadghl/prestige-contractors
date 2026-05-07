@@ -87,7 +87,7 @@ export default function Services() {
       {/* HERO */}
       <section ref={heroRef} style={{
         padding: '180px 0 100px',
-        background: 'linear-gradient(180deg, #111 0%, var(--dark) 100%)',
+        background: 'linear-gradient(180deg, var(--darker) 0%, var(--dark) 100%)',
         position: 'relative', overflow: 'hidden',
       }}>
         <div style={{ position: 'absolute', inset: 0, pointerEvents: 'none' }}>
@@ -154,7 +154,7 @@ export default function Services() {
           </p>
           <Link to="/contact" style={{
             padding: '16px 44px', background: 'var(--gold)',
-            color: 'var(--dark)', fontSize: 13, letterSpacing: '0.12em',
+            color: 'var(--darkest)', fontSize: 13, letterSpacing: '0.12em',
             textTransform: 'uppercase', fontWeight: 700, borderRadius: 2,
             display: 'inline-flex', alignItems: 'center', gap: 10, transition: 'var(--transition)',
           }}
@@ -172,7 +172,7 @@ function ServiceCard({ Icon, title, desc, features, tag, delay }) {
   const [hovered, setHovered] = useState(false)
   return (
     <div ref={ref} style={{
-      background: hovered ? '#1a1a1a' : 'var(--surface)',
+      background: hovered ? 'var(--surface)' : 'var(--surface)',
       padding: '48px 40px', border: `1px solid ${hovered ? 'rgba(200,169,110,0.4)' : 'var(--border)'}`,
       transition: 'var(--transition)', cursor: 'default',
       opacity: vis ? 1 : 0, transform: vis ? 'translateY(0)' : 'translateY(28px)',
@@ -182,7 +182,7 @@ function ServiceCard({ Icon, title, desc, features, tag, delay }) {
     onMouseLeave={() => setHovered(false)}
     >
       {tag && (
-        <div style={{ position: 'absolute', top: 20, right: 20, padding: '4px 12px', background: 'var(--gold)', color: 'var(--dark)', fontSize: 10, letterSpacing: '0.15em', textTransform: 'uppercase', fontWeight: 700, borderRadius: 2 }}>{tag}</div>
+        <div style={{ position: 'absolute', top: 20, right: 20, padding: '4px 12px', background: 'var(--gold)', color: 'var(--darkest)', fontSize: 10, letterSpacing: '0.15em', textTransform: 'uppercase', fontWeight: 700, borderRadius: 2 }}>{tag}</div>
       )}
       <div style={{ width: 54, height: 54, border: `1px solid ${hovered ? 'rgba(200,169,110,0.5)' : 'var(--border)'}`, display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: 28, borderRadius: 2, transition: 'var(--transition)' }}>
         <Icon size={22} color="var(--gold)" />

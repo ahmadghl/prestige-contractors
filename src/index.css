@@ -6,14 +6,16 @@
   --gold: #C8A96E;
   --gold-light: #E2C99A;
   --gold-dark: #A0803E;
-  --charcoal: #1A1A1A;
-  --dark: #0D0D0D;
-  --mid: #2A2A2A;
-  --surface: #161616;
+  --dark: #2C2C2E;
+  --darker: #242426;
+  --darkest: #1E1E20;
+  --surface: #323234;
+  --surface-2: #3A3A3C;
   --border: rgba(200, 169, 110, 0.18);
-  --text-primary: #F5F0E8;
-  --text-secondary: #A8A090;
-  --text-muted: #6B6460;
+  --border-soft: rgba(255,255,255,0.07);
+  --text-primary: #F2F2F0;
+  --text-secondary: #B0ADA8;
+  --text-muted: #7C7A76;
   --font-serif: 'Cormorant Garamond', Georgia, serif;
   --font-sans: 'DM Sans', sans-serif;
   --max-w: 1200px;
@@ -35,4 +37,4 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
 ::-webkit-scrollbar { width: 5px; }
 ::-webkit-scrollbar-track { background: var(--dark); }
 ::-webkit-scrollbar-thumb { background: var(--gold-dark); border-radius: 3px; }
-::selection { background: var(--gold); color: var(--dark); }
+::selection { background: var(--gold); color: var(--darkest); }

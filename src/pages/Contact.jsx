@@ -53,7 +53,7 @@ export default function Contact() {
   return (
     <div>
       {/* HERO */}
-      <section ref={heroRef} style={{ padding: '180px 0 100px', background: 'linear-gradient(180deg, #111 0%, var(--dark) 100%)', position: 'relative', overflow: 'hidden' }}>
+      <section ref={heroRef} style={{ padding: '180px 0 100px', background: 'linear-gradient(180deg, var(--darker) 0%, var(--dark) 100%)', position: 'relative', overflow: 'hidden' }}>
         <div style={{ position: 'absolute', inset: 0, pointerEvents: 'none' }}>
           <svg width="100%" height="100%" style={{ opacity: 0.03 }}>
             <defs><pattern id="grid5" width="60" height="60" patternUnits="userSpaceOnUse"><path d="M 60 0 L 0 0 0 60" fill="none" stroke="#C8A96E" strokeWidth="0.5"/></pattern></defs>
@@ -164,7 +164,7 @@ export default function Contact() {
 
                   <button type="submit" disabled={loading} style={{
                     width: '100%', padding: '16px', background: loading ? 'var(--gold-dark)' : 'var(--gold)',
-                    color: 'var(--dark)', fontSize: 13, letterSpacing: '0.15em',
+                    color: 'var(--darkest)', fontSize: 13, letterSpacing: '0.15em',
                     textTransform: 'uppercase', fontWeight: 700, borderRadius: 2,
                     display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 10,
                     transition: 'var(--transition)', cursor: loading ? 'wait' : 'pointer',

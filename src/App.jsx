@@ -40,7 +40,7 @@ function NotFound() {
       <div style={{ fontFamily: 'var(--font-serif)', fontSize: 120, fontWeight: 600, color: 'rgba(200,169,110,0.15)', lineHeight: 1 }}>404</div>
       <h2 style={{ fontFamily: 'var(--font-serif)', fontSize: 36, fontWeight: 600, marginBottom: 16, marginTop: -20 }}>Page Not Found</h2>
       <p style={{ color: 'var(--text-secondary)', marginBottom: 40 }}>The page you are looking for does not exist.</p>
-      <a href="/" style={{ padding: '13px 32px', background: 'var(--gold)', color: 'var(--dark)', fontSize: 13, letterSpacing: '0.12em', textTransform: 'uppercase', fontWeight: 700, borderRadius: 2 }}>Go Home</a>
+      <a href="/" style={{ padding: '13px 32px', background: 'var(--gold)', color: 'var(--darkest)', fontSize: 13, letterSpacing: '0.12em', textTransform: 'uppercase', fontWeight: 700, borderRadius: 2 }}>Go Home</a>
     </div>
   )
 }

@@ -27,7 +27,7 @@ export default function Navbar() {
     <nav style={{
       position: 'fixed', top: 0, left: 0, right: 0, zIndex: 1000,
       padding: scrolled ? '14px 0' : '22px 0',
-      background: scrolled ? 'rgba(13,13,13,0.97)' : 'transparent',
+      background: scrolled ? 'rgba(44,44,46,0.97)' : 'transparent',
       backdropFilter: scrolled ? 'blur(20px)' : 'none',
       borderBottom: scrolled ? '1px solid var(--border)' : '1px solid transparent',
       transition: 'var(--transition)',
@@ -73,7 +73,7 @@ export default function Navbar() {
           textTransform: 'uppercase', fontWeight: 500, borderRadius: 2,
           transition: 'var(--transition)',
         }}
-        onMouseEnter={e => { e.currentTarget.style.background = 'var(--gold)'; e.currentTarget.style.color = 'var(--dark)' }}
+        onMouseEnter={e => { e.currentTarget.style.background = 'var(--gold)'; e.currentTarget.style.color = 'var(--darkest)' }}
         onMouseLeave={e => { e.currentTarget.style.background = 'transparent'; e.currentTarget.style.color = 'var(--gold)' }}
         >Book Consultation</Link>
 
@@ -87,7 +87,7 @@ export default function Navbar() {
       {open && (
         <div style={{
           position: 'absolute', top: '100%', left: 0, right: 0,
-          background: 'rgba(13,13,13,0.98)', backdropFilter: 'blur(20px)',
+          background: 'rgba(44,44,46,0.98)', backdropFilter: 'blur(20px)',
           borderBottom: '1px solid var(--border)', padding: '24px 40px',
         }}>
           {links.map(l => (

@@ -16,15 +16,15 @@ function useInView(threshold = 0.1) {
 const categories = ['All', 'Residential', 'Commercial', 'Industrial', 'Renovation']
 
 const projects = [
-  { title: 'Luxury Villa Complex', category: 'Residential', location: 'Islamabad, Pakistan', year: '2024', area: '12,000 sq ft', desc: 'Full structural design and project management for a 6-villa luxury complex with underground parking and landscaped grounds.', color: '#2a2016' },
-  { title: 'Corporate Tower Consultancy', category: 'Commercial', location: 'Karachi, Pakistan', year: '2024', area: '85,000 sq ft', desc: 'Structural engineering consultancy for a 22-storey commercial tower — from concept design through construction supervision.', color: '#162016' },
-  { title: 'Industrial Warehouse Facility', category: 'Industrial', location: 'Lahore, Pakistan', year: '2023', area: '45,000 sq ft', desc: 'Complete design, BOQ, and quality assurance for a large-scale industrial storage and logistics facility.', color: '#161a20' },
-  { title: 'Heritage Hotel Renovation', category: 'Renovation', location: 'Lahore, Pakistan', year: '2023', area: '28,000 sq ft', desc: 'Sensitive structural retrofitting and full interior renovation of a heritage-listed colonial-era hotel, preserving original character.', color: '#1e1616' },
-  { title: 'Residential Apartment Block', category: 'Residential', location: 'Rawalpindi, Pakistan', year: '2023', area: '35,000 sq ft', desc: 'Structural design, permits, and project management for a 12-storey residential apartment building with 96 units.', color: '#2a2016' },
-  { title: 'Shopping Mall Expansion', category: 'Commercial', location: 'Islamabad, Pakistan', year: '2022', area: '60,000 sq ft', desc: 'Structural analysis and phased expansion consultancy for a major retail complex while maintaining live operations.', color: '#162016' },
-  { title: 'Online Consultation — UAE Client', category: 'Residential', location: 'Dubai, UAE (Remote)', year: '2024', area: '8,500 sq ft', desc: 'Full remote consultancy for a luxury villa project — structural review, design critique, and BOQ over 12 video sessions.', color: '#1a1620' },
-  { title: 'Factory Structural Audit', category: 'Industrial', location: 'Faisalabad, Pakistan', year: '2022', area: '22,000 sq ft', desc: 'Comprehensive structural audit and retrofitting recommendation report for an aging manufacturing facility.', color: '#161a20' },
-  { title: 'School Building Project', category: 'Commercial', location: 'Peshawar, Pakistan', year: '2022', area: '18,000 sq ft', desc: 'Full-cycle project management and quality assurance for a 3-storey school with 40 classrooms and sports facilities.', color: '#162016' },
+  { title: 'Luxury Villa Complex', category: 'Residential', location: 'Islamabad, Pakistan', year: '2024', area: '12,000 sq ft', desc: 'Full structural design and project management for a 6-villa luxury complex with underground parking and landscaped grounds.', color: 'var(--surface-2)' },
+  { title: 'Corporate Tower Consultancy', category: 'Commercial', location: 'Karachi, Pakistan', year: '2024', area: '85,000 sq ft', desc: 'Structural engineering consultancy for a 22-storey commercial tower — from concept design through construction supervision.', color: 'var(--surface-2)' },
+  { title: 'Industrial Warehouse Facility', category: 'Industrial', location: 'Lahore, Pakistan', year: '2023', area: '45,000 sq ft', desc: 'Complete design, BOQ, and quality assurance for a large-scale industrial storage and logistics facility.', color: 'var(--surface-2)' },
+  { title: 'Heritage Hotel Renovation', category: 'Renovation', location: 'Lahore, Pakistan', year: '2023', area: '28,000 sq ft', desc: 'Sensitive structural retrofitting and full interior renovation of a heritage-listed colonial-era hotel, preserving original character.', color: 'var(--surface-2)' },
+  { title: 'Residential Apartment Block', category: 'Residential', location: 'Rawalpindi, Pakistan', year: '2023', area: '35,000 sq ft', desc: 'Structural design, permits, and project management for a 12-storey residential apartment building with 96 units.', color: 'var(--surface-2)' },
+  { title: 'Shopping Mall Expansion', category: 'Commercial', location: 'Islamabad, Pakistan', year: '2022', area: '60,000 sq ft', desc: 'Structural analysis and phased expansion consultancy for a major retail complex while maintaining live operations.', color: 'var(--surface-2)' },
+  { title: 'Online Consultation — UAE Client', category: 'Residential', location: 'Dubai, UAE (Remote)', year: '2024', area: '8,500 sq ft', desc: 'Full remote consultancy for a luxury villa project — structural review, design critique, and BOQ over 12 video sessions.', color: 'var(--surface-2)' },
+  { title: 'Factory Structural Audit', category: 'Industrial', location: 'Faisalabad, Pakistan', year: '2022', area: '22,000 sq ft', desc: 'Comprehensive structural audit and retrofitting recommendation report for an aging manufacturing facility.', color: 'var(--surface-2)' },
+  { title: 'School Building Project', category: 'Commercial', location: 'Peshawar, Pakistan', year: '2022', area: '18,000 sq ft', desc: 'Full-cycle project management and quality assurance for a 3-storey school with 40 classrooms and sports facilities.', color: 'var(--surface-2)' },
 ]
 
 export default function Projects() {
@@ -36,7 +36,7 @@ export default function Projects() {
   return (
     <div>
       {/* HERO */}
-      <section ref={heroRef} style={{ padding: '180px 0 100px', background: 'linear-gradient(180deg, #111 0%, var(--dark) 100%)', position: 'relative', overflow: 'hidden' }}>
+      <section ref={heroRef} style={{ padding: '180px 0 100px', background: 'linear-gradient(180deg, var(--darker) 0%, var(--dark) 100%)', position: 'relative', overflow: 'hidden' }}>
         <div style={{ position: 'absolute', inset: 0, pointerEvents: 'none' }}>
           <svg width="100%" height="100%" style={{ opacity: 0.03 }}>
             <defs><pattern id="grid3" width="60" height="60" patternUnits="userSpaceOnUse"><path d="M 60 0 L 0 0 0 60" fill="none" stroke="#C8A96E" strokeWidth="0.5"/></pattern></defs>
@@ -61,7 +61,7 @@ export default function Projects() {
               textTransform: 'uppercase', fontWeight: 500, borderRadius: 2,
               border: `1px solid ${active === cat ? 'var(--gold)' : 'var(--border)'}`,
               background: active === cat ? 'var(--gold)' : 'transparent',
-              color: active === cat ? 'var(--dark)' : 'var(--text-secondary)',
+              color: active === cat ? 'var(--darkest)' : 'var(--text-secondary)',
               transition: 'var(--transition)', cursor: 'pointer',
             }}>{cat}</button>
           ))}
@@ -106,7 +106,7 @@ export default function Projects() {
             Whether it's a small renovation or a landmark commercial build — Prestige Contractors brings world-class consultancy to your doorstep.
           </p>
           <Link to="/contact" style={{
-            padding: '15px 40px', background: 'var(--gold)', color: 'var(--dark)',
+            padding: '15px 40px', background: 'var(--gold)', color: 'var(--darkest)',
             fontSize: 13, letterSpacing: '0.12em', textTransform: 'uppercase',
             fontWeight: 700, borderRadius: 2, display: 'inline-flex', alignItems: 'center', gap: 10, transition: 'var(--transition)',
           }}
